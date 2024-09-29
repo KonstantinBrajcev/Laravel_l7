@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
-    // Укажите имя таблицы
+    // имя таблицы
     protected $table = 'user';
 
-    // Укажите, какие поля можно массово заполнять
+    // Указание, полей которые можно массово заполнять
     protected $fillable = [
         'first_name',
         'last_name',
         'email',
         'workdata',
     ];
-    public $timestamps = false; // Отключает временные метки
+    public $timestamps = false; // Отключение временных меток
 }
