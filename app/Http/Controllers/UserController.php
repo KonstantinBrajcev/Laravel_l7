@@ -52,15 +52,15 @@ class UserController extends Controller
     }
     public function edit($id)
     {
-        $employee = User::findOrFail($id); // Получите сотрудника по ID
-        return view('edit', compact('employee')); // Передайте сотрудника в представление
+        $employee = User::findOrFail($id); // Получение сотрудника по ID
+        return view('edit', compact('employee')); // Передача сотрудника в представление
     }
 
 
 
     public function update(Request $request, $id)
     {
-        // Найдите работника по ID и обновите его данные
+        // Поиск работника по ID и его обновление данных
         $employee = User::findOrFail($id);
         $employee->update($request->all());
         return redirect()->route('users', $id)->with('success', 'Данные работника успешно обновлены!');
@@ -68,8 +68,8 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $employee = User::findOrFail($id); // Найдите сотрудника по ID
+        $employee = User::findOrFail($id); // Поиск сотрудника по ID
         $employee->delete(); // Удалите сотрудника
-        return redirect()->route('users.index')->with('success', 'Сотрудник успешно удалён.'); // Перенаправьте на индекс с сообщением
+        return redirect()->route('users.index')->with('success', 'Сотрудник успешно удалён.'); // Перенаправление на индекс с сообщением
     }
 }
